@@ -7,4 +7,8 @@
     <!-- 로그인/회원가입 선택 창 -->
     <string name="selector_login">로그인</string>
     <string name="selector_signup">회원가입</string>
+
+    <!-- 로그인 화면 -->
+    <string name="login_email">이메일</string>
+    <string name="login_passwd">비밀번호</string>
 </resources>
