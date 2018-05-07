@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SafetyPin</string>
+    <string name="app_name_safety">Safety</string>
+    <string name="app_name_pin"> PIN</string>
+    <string name="app_title">학교를 위한 보안 솔루션</string>
+
+    <!-- 로그인/회원가입 선택 창 -->
+    <string name="selector_login">로그인</string>
+    <string name="selector_signup">회원가입</string>
 </resources>
