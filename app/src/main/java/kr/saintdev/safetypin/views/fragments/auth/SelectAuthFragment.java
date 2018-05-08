@@ -49,6 +49,7 @@ public class SelectAuthFragment extends SuperFragment {
                     control.switchFragment(new LoginFragment());
                     break;
                 case R.id.auth_select_signup:
+                    control.switchFragment(new SignupFragment());
                     break;
             }
         }

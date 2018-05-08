@@ -59,7 +59,6 @@
             android:textColor="@color/colorWhite"
             android:hint="@string/login_email"
             android:inputType="textEmailAddress"
-
             android:textColorHint="@color/colorWhite"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"

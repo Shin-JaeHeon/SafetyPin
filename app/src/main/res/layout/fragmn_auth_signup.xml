@@ -1,5 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/gradent_default">
+    <!-- 백그라운드 이미지 입니다. -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/wallpaper_background"
+        android:scaleType="centerCrop"
+        android:alpha="0.1"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_title"
+        android:textColor="@color/colorWhite"
+        android:textSize="32sp"
+        android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/auth_signup_name"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            android:hint="@string/signup_name"
+            android:textColorHint="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/auth_signup_email"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            android:hint="@string/login_email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/auth_signup_passwd"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            android:hint="@string/login_passwd"
+            android:inputType="textPassword"
+            android:textColorHint="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/auth_signup_childname"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            android:hint="@string/child_name"
+            android:textColorHint="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/auth_signup_gcode"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            android:hint="@string/child_gcode"
+            android:inputType="number"
+            android:textColorHint="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/auth_signup_code"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            android:hint="@string/signup_code"
+            android:textColorHint="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorWhite"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/auth_signup_commit"
+            android:text="@string/selector_signup"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="24dp"
+            android:textSize="14sp"
+            android:padding="16dp"
+            android:background="@drawable/button_circle_white"/>
+    </LinearLayout>
 </RelativeLayout>
