@@ -25,8 +25,11 @@ public class AuthmeActivity extends AppCompatActivity {
     public void switchFragment(SuperFragment view) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
+        ft.setCustomAnimations(R.anim.anime_visible, R.anim.anime_invisible);
         ft.replace(R.id.authme_container, view);
         ft.commit();
+
+        ft.addToBackStack(null);
     }
 
     public void controlActionBar(@Nullable String title) {
