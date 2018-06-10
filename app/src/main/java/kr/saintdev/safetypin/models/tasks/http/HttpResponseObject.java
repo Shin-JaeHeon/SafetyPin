@@ -11,47 +11,45 @@ import org.json.JSONObject;
  */
 
 public class HttpResponseObject {
-    private JSONObject header = null;   // 요청 결과에 대한 해더
-    private JSONObject body = null;     // 요청 결과에 대한 바디
-    private JSONObject response = null; // 응답 객체
-
-    private int responseResultCode = 0;        // 응답 코드
-
-    private boolean isErrorOccurred = false;
-    private String errorMessage = null;
+    private boolean isSuccess = false;      // 실행 성공 여부
+    private int errorCode = -1;             // 오류 발생 시 코드값
+    private String errorMessage = null;     //               메세지
+    private String errorMissingPoint = null;       //        발생 위치
+    private JSONObject message = null;      // 오류가 없을 경우 응답 값
 
     public HttpResponseObject(String json) throws JSONException {
-        this.response = new JSONObject(json);
-        this.header = this.response.getJSONObject("header");
+        JSONObject response = new JSONObject(json);
 
-        // body 를 받습니다.
-        if(!this.response.isNull("body")) {
-            this.body = this.response.getJSONObject("body");
+        this.isSuccess = response.getBoolean("success");
+        if(this.isSuccess) {
+            // 성공했습니다.
+            this.message = response.getJSONObject("message");
+        } else {
+            // 실패 했습니다.
+            JSONObject errorObject = response.getJSONObject("errorObject");
+            this.errorCode = errorObject.getInt("code");
+            this.errorMissingPoint = errorObject.getString("missing");
+            this.errorMessage = errorObject.getString("message");
         }
-
-        // error 가 발생했는지 확인합니다
-        this.isErrorOccurred = this.header.getBoolean("error-occurred");
-        if(this.isErrorOccurred) {
-            this.errorMessage = this.header.getString("error-message");
-        }
-
-        this.responseResultCode = this.header.getInt("code");               // 서버 처리 결과 코드 받기
     }
 
-    public JSONObject getBody() {
-        return body;
+    public boolean isSuccess() {
+        return isSuccess;
     }
-    public JSONObject getHeader() { return header; }
 
-    public boolean isErrorOccurred() {
-        return isErrorOccurred;
+    public int getErrorCode() {
+        return errorCode;
     }
 
     public String getErrorMessage() {
         return errorMessage;
     }
 
-    public int getResponseResultCode() {
-        return this.responseResultCode;     // 서버에서 처리에 대한 결과 코드
+    public String getErrorMissingPoint() {
+        return errorMissingPoint;
+    }
+
+    public JSONObject getMessage() {
+        return message;
     }
 }

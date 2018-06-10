@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import kr.saintdev.safetypin.R;
+import kr.saintdev.safetypin.views.activitys.AuthmeActivity;
+import kr.saintdev.safetypin.views.controls.auth.LoginControl;
 import kr.saintdev.safetypin.views.fragments.SuperFragment;
 
 /**
@@ -17,13 +19,32 @@ import kr.saintdev.safetypin.views.fragments.SuperFragment;
  */
 
 public class LoginFragment extends SuperFragment {
+    AuthmeActivity activity = null;
+    LoginControl control = null;
+    View view = null;
+
     public LoginFragment() {
     }
 
-    @Nullable
-    @Override
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragmn_auth_login, container, false);
+        this.activity = (AuthmeActivity) getActivity();
+        this.control = new LoginControl(this);
+        this.view = v;
+
         return v;
+    }
+
+    public AuthmeActivity getCurrectActivity() {
+        return activity;
+    }
+
+    public LoginControl getControl() {
+        return control;
+    }
+
+    public View getCurrectView() {
+        return view;
     }
 }

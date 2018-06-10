@@ -21,39 +21,17 @@ import okhttp3.Response;
 public class HttpRequester extends BackgroundWork<HttpResponseObject> {
     private String url = null;
     private HashMap<String, Object> param = null;
-//    private MeProfiler me = null;
-//    private KakaoLoginManager kakaoLogin = null;
 
     public HttpRequester(String url, HashMap<String, Object> args, int requestCode, OnBackgroundWorkListener listener, Context context) {
         super(requestCode, listener);
         this.url = url;
         this.param = args;
-
-        // 인증서 관련 데이터를 가지고 있다.
-//        this.me = MeProfiler.getInstance(context);
-//        this.kakaoLogin = KakaoLoginManager.getInstance(context);
     }
 
     @Override
     protected HttpResponseObject script() throws Exception {
         OkHttpClient client = new OkHttpClient();
         FormBody.Builder reqBuilder = new FormBody.Builder();
-
-        // 사용자 인증 값을 넣습니다.
-//        KakaoLoginObject kakaoLoginObject = this.kakaoLogin.getKakaoLoginObject();
-//        MeProfileObject profileObj = this.me.getCertification();
-
-//        if(kakaoLoginObject == null) {
-//            // 인증서가 없네요.
-//            throw new Exception("Unknown Certificate.");
-//        }
-//
-//        reqBuilder.add("X-kakao-id", kakaoLoginObject.getKakaoID());
-//        if(profileObj != null) {
-//            reqBuilder.add("X-user-uuid", profileObj.getUserKey());
-//        } else {
-//            reqBuilder.add("X-user-uuid", "");
-//        }
 
         // 인자 값이 있다면 넣어줍니다.
         if(param != null) {
