@@ -29,6 +29,7 @@ public class SubProfileManager {
 
     private SubProfileManager(Context context) {
         this.dbHelper = new DBHelper(context);
+        this.dbHelper.open();
     }
 
     public ArrayList<TeacherObject> getTeachers() {
