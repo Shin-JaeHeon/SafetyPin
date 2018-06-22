@@ -149,7 +149,8 @@ public class LoginControl {
 
                             ChildObject childObj = new ChildObject(     // ArrayList 으로 변경 합니다.
                                     child.getString("st_name"),
-                                    child.getString("st_num")
+                                    child.getString("st_num"),
+                                    child.getString("code")
                             );
 
                             childs.add(childObj);

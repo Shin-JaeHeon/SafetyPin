@@ -10,10 +10,12 @@ public class ChildObject {
     private int idx = 0;
     private String childName = null;
     private String childNum = null;
+    private String childCode = null;
 
-    public ChildObject(String childName, String childNum) {
+    public ChildObject(String childName, String childNum, String childCode) {
         this.childName = childName;
         this.childNum = childNum;
+        this.childCode = childCode;
     }
 
     public void setIdx(int idx) {
@@ -30,5 +32,9 @@ public class ChildObject {
 
     public String getChildNum() {
         return childNum;
+    }
+
+    public String getChildCode() {
+        return childCode;
     }
 }
