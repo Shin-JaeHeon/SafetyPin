@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
             switch ((int) v.getTag()) {
                 case 0:                 // 방문 요청 보내기
+                    intent = new Intent(getApplicationContext(), RequestActivity.class);
                     break;
                 case 1:                 // 메세지 보내기
                     intent = new Intent(getApplicationContext(), ChatActivity.class);

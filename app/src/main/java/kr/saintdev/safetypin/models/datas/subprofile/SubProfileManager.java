@@ -90,9 +90,10 @@ public class SubProfileManager {
         for(int i = 0; i < childs.size(); i ++) {
             ChildObject child = childs.get(i);
 
-            SQLiteStatement pst = db.compileStatement("INSERT INTO tb_parent_childs (child_name, child_num) VALUES(?,?)");
+            SQLiteStatement pst = db.compileStatement("INSERT INTO tb_parent_childs (child_name, child_num, child_code) VALUES(?,?,?)");
             pst.bindString(1, child.getChildName());
             pst.bindString(2, child.getChildNum());
+            pst.bindString(3, child.getChildCode());
             pst.execute();
         }
     }

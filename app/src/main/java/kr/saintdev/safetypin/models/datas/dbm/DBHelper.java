@@ -55,7 +55,8 @@ public class DBHelper extends SQLiteOpenHelper {
         String PARENT_CHILDS = "CREATE TABLE `tb_parent_childs` (" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "child_name TEXT NOT NULL," +
-                "child_num INTEGER NOT NULL" +
+                "child_num INTEGER NOT NULL," +
+                "child_code INTEGER NOT NULL" +
                 ");";
         String CHILDS_TEACHER = "CREATE TABLE `tb_child_teacher` (" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT," +

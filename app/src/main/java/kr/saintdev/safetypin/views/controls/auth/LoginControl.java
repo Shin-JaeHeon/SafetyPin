@@ -2,6 +2,7 @@ package kr.saintdev.safetypin.views.controls.auth;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -146,7 +147,6 @@ public class LoginControl {
                         ArrayList<ChildObject> childs = new ArrayList<>();
                         for(int i = 0; i < childArray.length(); i ++) {
                             JSONObject child = (JSONObject) childArray.get(i);  // 자녀 하나를 가져와서
-
                             ChildObject childObj = new ChildObject(     // ArrayList 으로 변경 합니다.
                                     child.getString("st_name"),
                                     child.getString("st_num"),
