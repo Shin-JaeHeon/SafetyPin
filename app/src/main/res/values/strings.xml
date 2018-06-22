@@ -18,4 +18,10 @@
     <string name="child_name">자녀의 이름</string>
     <string name="child_gcode">자녀의 학번</string>
     <string name="signup_code">가입 코드</string>
+
+    <!-- 메인 화면 -->
+    <string name="main_menu_send_visit_request">방문 요청 보내기</string>
+    <string name="main_menu_send_message">메세지 보내기</string>
+    <string name="main_menu_settings">환경 설정</string>
+    <string name="main_menu_help">도움말</string>
 </resources>
