@@ -57,7 +57,8 @@ public class SubProfileManager {
         while(cs.moveToNext()) {
             ChildObject child = new ChildObject(
                     cs.getString(1),
-                    cs.getString(2)
+                    cs.getString(2),
+                    cs.getString(3)
             );
 
             childArray.add(child);
