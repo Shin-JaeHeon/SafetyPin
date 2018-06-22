@@ -30,8 +30,9 @@ public class LoginFragment extends SuperFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragmn_auth_login, container, false);
         this.activity = (AuthmeActivity) getActivity();
-        this.control = new LoginControl(this);
         this.view = v;
+
+        this.control = new LoginControl(this);
 
         return v;
     }

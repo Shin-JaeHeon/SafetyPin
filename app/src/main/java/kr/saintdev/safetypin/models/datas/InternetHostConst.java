@@ -15,4 +15,9 @@ public interface InternetHostConst {
      */
     String ACCOUNT_REGISTER = SERVER_HOST + "account/register";
     String ACCOUNT_LOGIN = SERVER_HOST + "account/login";
+
+    /**
+     * User 가 Pin 관련 조작을 가할 때
+     */
+    String MY_PIN_REQUEST = SERVER_HOST + "pin/mypin";
 }
