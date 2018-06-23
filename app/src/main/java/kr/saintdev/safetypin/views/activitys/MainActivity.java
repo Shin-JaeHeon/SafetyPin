@@ -1,5 +1,6 @@
 package kr.saintdev.safetypin.views.activitys;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import kr.saintdev.safetypin.models.components.lib.TileManager;
 import kr.saintdev.safetypin.models.datas.InternetHostConst;
 import kr.saintdev.safetypin.models.datas.profile.MeProfileManager;
 import kr.saintdev.safetypin.models.datas.profile.MeProfileObject;
+import kr.saintdev.safetypin.models.datas.subprofile.SubProfileManager;
 import kr.saintdev.safetypin.models.tasks.BackgroundWork;
 import kr.saintdev.safetypin.models.tasks.OnBackgroundWorkListener;
 import kr.saintdev.safetypin.models.tasks.http.HttpRequester;
@@ -38,9 +40,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView myPinTitle = null;
     private TextView myPinSubTitle = null;
 
-    private TileManager menuTileManager = null;
-    private MeProfileManager profileManager = null;
+    public TileManager menuTileManager = null;
+    public static  MeProfileManager profileManager = null;
+    public static SubProfileManager subProfileManager = null;
     private DialogManager dm = null;
+    public static Context context;
 
 
     @Override
@@ -50,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         // 객체 찾기
+        context = this;
         this.helloMessageView = findViewById(R.id.main_hello_parent);
         this.gridLayout = findViewById(R.id.main_menu_tiles);
         this.myPinTitle = findViewById(R.id.main_pin_mypin);
@@ -57,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         this.menuTileManager = new TileManager(this, this.gridLayout);
 
         this.profileManager = MeProfileManager.getInstance(this);
+        this.subProfileManager = SubProfileManager.getInstance(this);
         this.dm = new DialogManager(this);
 
         MeProfileObject profileObject = this.profileManager.getProfileObject();
@@ -97,28 +103,28 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            if(intent != null) startActivity(intent);
+            if (intent != null) startActivity(intent);
         }
     }
 
     class OnBackgroundCallback implements OnBackgroundWorkListener, OnYesClickListener {
         @Override
         public void onSuccess(int requestCode, BackgroundWork worker) {
-            if(requestCode == 0x0) {
+            if (requestCode == 0x0) {
                 HttpResponseObject response = (HttpResponseObject) worker.getResult();
 
-                if(response.isSuccess()) {
+                if (response.isSuccess()) {
                     JSONObject message = response.getMessage();
 
                     try {
-                        if(message.isNull("pin")) {
+                        if (message.isNull("pin")) {
                             myPinTitle.setText("생성된 PIN 코드가 없습니다.");
                         } else {
                             String pinCode = message.getString("pin");
 
                             myPinTitle.setText(pinCode);
                         }
-                    } catch(JSONException jex) {
+                    } catch (JSONException jex) {
                         onFailed(0x0, jex);
                     }
                 } else {

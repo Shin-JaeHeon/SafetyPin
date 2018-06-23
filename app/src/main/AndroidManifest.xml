@@ -27,7 +27,6 @@
         <activity
             android:name=".views.activitys.RequestActivity"
             android:enabled="true" />
-
         <activity
             android:name=".views.activitys.ChatActivity"
             android:enabled="true" />
