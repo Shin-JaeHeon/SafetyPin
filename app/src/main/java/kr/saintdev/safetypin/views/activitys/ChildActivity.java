@@ -50,7 +50,7 @@ public class ChildActivity extends AppCompatActivity {
             MeProfileObject profileObject = profileManager.getProfileObject();
             HashMap<String, Object> args = new HashMap<>();
             args.put("session", profileObject.getSessionId());
-            args.put("id", child.getText().toString());
+            args.put("code", child.getText().toString());
             HttpRequester myPinRequester = new HttpRequester(InternetHostConst.CHILD_ADD, args, 0x0, new OnBackgroundCallback(), MainActivity.context);
             myPinRequester.execute();
         }

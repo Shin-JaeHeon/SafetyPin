@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent = null;
-
             switch ((int) v.getTag()) {
                 case 0:                 // 방문 요청 보내기
                     intent = new Intent(getApplicationContext(), RequestActivity.class);
@@ -98,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 2:                 // 자녀 등록
                     intent = new Intent(getApplicationContext(), ChildActivity.class);
+                    break;
                 case 3:                 // 도움말
                     break;
             }
