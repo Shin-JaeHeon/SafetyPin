@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         this.myPinSubTitle = findViewById(R.id.main_pin_mypin_subtitle);
         this.menuTileManager = new TileManager(this, this.gridLayout);
 
-        this.profileManager = MeProfileManager.getInstance(this);
-        this.subProfileManager = SubProfileManager.getInstance(this);
+        profileManager = MeProfileManager.getInstance(this);
+        subProfileManager = SubProfileManager.getInstance(this);
         this.dm = new DialogManager(this);
 
         MeProfileObject profileObject = this.profileManager.getProfileObject();
