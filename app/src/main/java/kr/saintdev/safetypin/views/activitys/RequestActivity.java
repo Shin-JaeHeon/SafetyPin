@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import kr.saintdev.safetypin.R;
 import kr.saintdev.safetypin.models.datas.InternetHostConst;
@@ -35,15 +36,14 @@ public class RequestActivity extends AppCompatActivity {
     private MeProfileManager profileManager = MainActivity.profileManager;
     private SubProfileManager subProfileManager = MainActivity.subProfileManager;
     private DialogManager dm = null;
-    private Button requestButton = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reqeust);
-        getSupportActionBar().hide();
-        this.requestButton = this.findViewById(R.id.request_btn);
-        this.requestButton.setOnClickListener(new OnRequestClickListener());
+        Objects.requireNonNull(getSupportActionBar()).hide();
+        Button requestButton = this.findViewById(R.id.request_btn);
+        requestButton.setOnClickListener(new OnRequestClickListener());
     }
 
     class OnRequestClickListener implements View.OnClickListener {

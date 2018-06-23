@@ -14,6 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import kr.saintdev.safetypin.R;
 import kr.saintdev.safetypin.models.components.lib.TileManager;
@@ -35,13 +36,10 @@ import kr.saintdev.safetypin.views.windows.dialog.clicklistener.OnYesClickListen
  */
 
 public class MainActivity extends AppCompatActivity {
-    private TextView helloMessageView = null;
-    private GridLayout gridLayout = null;
     private TextView myPinTitle = null;
-    private TextView myPinSubTitle = null;
 
     public TileManager menuTileManager = null;
-    public static  MeProfileManager profileManager = null;
+    public static MeProfileManager profileManager = null;
     public static SubProfileManager subProfileManager = null;
     private DialogManager dm = null;
     public static Context context;
@@ -51,21 +49,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         // 객체 찾기
         context = this;
-        this.helloMessageView = findViewById(R.id.main_hello_parent);
-        this.gridLayout = findViewById(R.id.main_menu_tiles);
+        TextView helloMessageView = findViewById(R.id.main_hello_parent);
+        GridLayout gridLayout = findViewById(R.id.main_menu_tiles);
         this.myPinTitle = findViewById(R.id.main_pin_mypin);
-        this.menuTileManager = new TileManager(this, this.gridLayout);
+        this.menuTileManager = new TileManager(this, gridLayout);
 
         profileManager = MeProfileManager.getInstance(this);
         subProfileManager = SubProfileManager.getInstance(this);
         this.dm = new DialogManager(this);
 
-        MeProfileObject profileObject = this.profileManager.getProfileObject();
-        this.helloMessageView.setText("안녕하세요.\n" + profileObject.getName() + " 학부모 님");
+        MeProfileObject profileObject = profileManager.getProfileObject();
+        helloMessageView.setText(String.format("안녕하세요.\n%s 학부모 님", profileObject.getName()));
 
         initMenuTiles();
 
@@ -117,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         if (message.isNull("pin")) {
-                            myPinTitle.setText("생성된 PIN 코드가 없습니다.");
+                            myPinTitle.setText(R.string.no_pin);
                         } else {
                             String pinCode = message.getString("pin");
 
