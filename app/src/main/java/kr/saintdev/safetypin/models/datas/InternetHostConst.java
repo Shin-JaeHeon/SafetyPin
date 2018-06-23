@@ -24,4 +24,10 @@ public interface InternetHostConst {
      * User 가 Request 관련 조작을 가할 때
      */
     String PIN_REQUEST = SERVER_HOST + "pin/request";
+
+    /**
+     * User 가 Chat 관련 조작을 가할 때
+     */
+    String CHAT_SEND = SERVER_HOST + "chat/send";
+    String CHAT_LOAD = SERVER_HOST + "chat/loadw";
 }
