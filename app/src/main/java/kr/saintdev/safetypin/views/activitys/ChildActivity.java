@@ -37,7 +37,7 @@ public class ChildActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reqeust);
+        setContentView(R.layout.activity_child);
         Objects.requireNonNull(getSupportActionBar()).hide();
         Button requestButton = this.findViewById(R.id.child_add_btn);
         child = findViewById(R.id.child_code);

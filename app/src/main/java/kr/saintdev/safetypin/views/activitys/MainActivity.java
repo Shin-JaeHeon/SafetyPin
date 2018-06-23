@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 case 1:                 // 메세지 보내기
                     intent = new Intent(getApplicationContext(), ChatActivity.class);
                     break;
-                case 2:                 // 환경 설정
-                    break;
+                case 2:                 // 자녀 등록
+                    intent = new Intent(getApplicationContext(), ChildActivity.class);
                 case 3:                 // 도움말
                     break;
             }
