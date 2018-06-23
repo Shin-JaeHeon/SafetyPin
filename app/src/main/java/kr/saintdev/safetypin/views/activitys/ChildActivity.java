@@ -63,6 +63,7 @@ public class ChildActivity extends AppCompatActivity {
                 HttpResponseObject response = (HttpResponseObject) worker.getResult();
                 if (response.isSuccess()) {
                     Toast.makeText(MainActivity.context, "자녀를 등록하였습니다", Toast.LENGTH_LONG).show();
+                    finish();
                 } else {
                     Toast.makeText(MainActivity.context, "자녀 등록에 실패하였습니다", Toast.LENGTH_LONG).show();
                 }
