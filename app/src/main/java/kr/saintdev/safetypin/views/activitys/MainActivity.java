@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         this.helloMessageView = findViewById(R.id.main_hello_parent);
         this.gridLayout = findViewById(R.id.main_menu_tiles);
         this.myPinTitle = findViewById(R.id.main_pin_mypin);
-        this.myPinSubTitle = findViewById(R.id.main_pin_mypin_subtitle);
         this.menuTileManager = new TileManager(this, this.gridLayout);
 
         profileManager = MeProfileManager.getInstance(this);

@@ -39,17 +39,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/main_pin_mypin"
-                android:text="생성된 PIN 코드가 없습니다."
-                android:textSize="16sp"
+                android:text="@string/no_pin"
+                android:textSize="25sp"
                 android:textColor="@color/colorPrimaryDark"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/main_pin_mypin_subtitle"
-                android:text="사용 방법을 보고 방문요청을 보내보세요!"
-                android:textSize="12sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="4dp"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
  
