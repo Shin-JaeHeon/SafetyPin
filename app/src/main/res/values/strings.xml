@@ -22,7 +22,7 @@
     <!-- 메인 화면 -->
     <string name="main_menu_send_visit_request">방문 요청 보내기</string>
     <string name="main_menu_send_message">메세지 보내기</string>
-    <string name="main_menu_settings">환경 설정</string>
+    <string name="main_menu_settings">자녀 등록</string>
     <string name="main_menu_help">도움말</string>
 
     <!-- 메인 화면 -->

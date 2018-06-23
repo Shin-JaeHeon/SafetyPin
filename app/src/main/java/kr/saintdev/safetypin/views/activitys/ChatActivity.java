@@ -34,9 +34,9 @@ import kr.saintdev.safetypin.views.windows.dialog.DialogManager;
 import kr.saintdev.safetypin.views.windows.dialog.clicklistener.OnYesClickListener;
 
 /**
- * Copyright (c) 2015-2018 Saint software All rights reserved.
+ * Copyright (c) 2018 Shin-JaeHeon All rights reserved.
  *
- * @Date 2018-06-22
+ * @Date 2018-06-21
  */
 
 public class ChatActivity extends AppCompatActivity {
@@ -45,9 +45,7 @@ public class ChatActivity extends AppCompatActivity {
     private MeProfileObject profileObject = profileManager.getProfileObject();
     private ChildObject childObject = subProfileManager.getChilds().get(0);
     private TeacherObject teacherObject = subProfileManager.getTeachers().get(0);
-    private Button chat_send;
     private EditText text_input;
-    private ListView chat_lv;
     private DialogManager dm = null;
     private ArrayAdapter<String> arrayAdapter;
     private String myChat = "";
@@ -58,9 +56,9 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         Objects.requireNonNull(getSupportActionBar()).hide();
-        chat_send = findViewById(R.id.chat_send);
+        Button chat_send = findViewById(R.id.chat_send);
         text_input = findViewById(R.id.text_input);
-        chat_lv = findViewById(R.id.chat_lv);
+        ListView chat_lv = findViewById(R.id.chat_lv);
         chat_send.setOnClickListener(new OnChatSend());
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
         chat_lv.setAdapter(arrayAdapter);
