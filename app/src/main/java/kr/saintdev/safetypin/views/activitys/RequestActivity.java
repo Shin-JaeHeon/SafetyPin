@@ -1,6 +1,5 @@
 package kr.saintdev.safetypin.views.activitys;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,13 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 
 import kr.saintdev.safetypin.R;
-import kr.saintdev.safetypin.models.components.lib.Functions;
 import kr.saintdev.safetypin.models.datas.InternetHostConst;
 import kr.saintdev.safetypin.models.datas.profile.MeProfileManager;
 import kr.saintdev.safetypin.models.datas.profile.MeProfileObject;
@@ -36,7 +32,7 @@ import kr.saintdev.safetypin.views.windows.dialog.clicklistener.OnYesClickListen
  */
 
 public class RequestActivity extends AppCompatActivity {
-    private MeProfileManager profileManager =MainActivity.profileManager;
+    private MeProfileManager profileManager = MainActivity.profileManager;
     private SubProfileManager subProfileManager = MainActivity.subProfileManager;
     private DialogManager dm = null;
     private Button requestButton = null;
