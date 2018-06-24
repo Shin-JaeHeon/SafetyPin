@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                         onFailed(0x0, jex);
                     }
                 } else {
-                    myPinTitle.setText("앗! 오류가 발생했습니다.");
+                    myPinTitle.setText(R.string.no_pin);
                 }
             }
         }
