@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.Toast;
 
 
@@ -36,6 +37,7 @@ public class RequestActivity extends AppCompatActivity {
     private MeProfileManager profileManager = MainActivity.profileManager;
     private SubProfileManager subProfileManager = MainActivity.subProfileManager;
     private DialogManager dm = null;
+    private CalendarView calendarView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +46,9 @@ public class RequestActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         Button requestButton = this.findViewById(R.id.request_btn);
         requestButton.setOnClickListener(new OnRequestClickListener());
+        calendarView = findViewById(R.id.request_calendarView);
+        calendarView.setMinDate(System.currentTimeMillis() - 1000);
+
     }
 
     class OnRequestClickListener implements View.OnClickListener {
@@ -56,6 +61,7 @@ public class RequestActivity extends AppCompatActivity {
             args.put("session", profileObject.getSessionId());
             args.put("teacher", teacherObject.getTeacherEmail());
             args.put("id", childObject.getChildCode());
+            args.put("date", calendarView.getDate());
             HttpRequester myPinRequester = new HttpRequester(InternetHostConst.PIN_REQUEST, args, 0x0, new OnBackgroundCallback(), MainActivity.context);
             myPinRequester.execute();
         }
