@@ -2,6 +2,7 @@ package kr.saintdev.safetypin.views.activitys;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -38,6 +39,7 @@ public class RequestActivity extends AppCompatActivity {
     private SubProfileManager subProfileManager = MainActivity.subProfileManager;
     private DialogManager dm = null;
     private CalendarView calendarView;
+    private String now;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,6 +50,12 @@ public class RequestActivity extends AppCompatActivity {
         requestButton.setOnClickListener(new OnRequestClickListener());
         calendarView = findViewById(R.id.request_calendarView);
         calendarView.setMinDate(System.currentTimeMillis() - 1000);
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                now = new StringBuilder(year).append("-").append(month).append("-").append(dayOfMonth).toString();
+            }
+        });
 
     }
 
@@ -61,7 +69,7 @@ public class RequestActivity extends AppCompatActivity {
             args.put("session", profileObject.getSessionId());
             args.put("teacher", teacherObject.getTeacherEmail());
             args.put("id", childObject.getChildCode());
-            args.put("date", calendarView.getDate());
+            args.put("date", now);
             HttpRequester myPinRequester = new HttpRequester(InternetHostConst.PIN_REQUEST, args, 0x0, new OnBackgroundCallback(), MainActivity.context);
             myPinRequester.execute();
         }
