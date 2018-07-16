@@ -124,7 +124,7 @@ public class SignupControl {
                     view.getControl().switchFragment(new LoginFragment());
                     Toast.makeText(context, "가입 되었습니다.", Toast.LENGTH_SHORT).show();
                 } else {
-                    showDialog("앗...", "가입 처리 할 수 없습니다.\n" + response.getErrorMessage());
+                    showDialog("알림", "가입에 실패하였습니다.\n" + response.getErrorMessage());
                 }
             }
         }
@@ -132,7 +132,7 @@ public class SignupControl {
         @Override
         public void onFailed(int requestCode, Exception ex) {
             pm.disable();
-            showDialog("뭣...", "오류가 발생했습니다.\n" + ex.getMessage());
+            showDialog("알림", "오류가 발생했습니다.\n" + ex.getMessage());
         }
     }
 
