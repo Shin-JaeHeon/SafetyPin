@@ -2,11 +2,9 @@ package kr.saintdev.safetypin.views.controls.auth;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,7 +42,6 @@ public class LoginControl {
 
     private EditText emailEditor = null;
     private EditText passwdEditor = null;
-    private Button submitButton = null;
 
     private DialogManager dm = null;
     private ProgressManager pm = null;
@@ -62,7 +59,7 @@ public class LoginControl {
 
         this.emailEditor = v.findViewById(R.id.auth_login_email);
         this.passwdEditor = v.findViewById(R.id.auth_login_passwd);
-        this.submitButton = v.findViewById(R.id.auth_select_login);
+        Button submitButton = v.findViewById(R.id.auth_select_login);
 
         // 객체 생성
         this.context = fragmn.getContext();
@@ -72,7 +69,7 @@ public class LoginControl {
 
         // 이벤트 핸들링
         this.dm.setOnYesButtonClickListener(new OnDialogOkClickListener(), "OK");
-        this.submitButton.setOnClickListener(new OnSubmitClickListener());
+        submitButton.setOnClickListener(new OnSubmitClickListener());
     }
 
     /**
@@ -98,7 +95,7 @@ public class LoginControl {
                 requester.execute();
             } else {
                 // 빈 값이 있습니다.
-                showDialog("앗...", "어딘가 빈 필드가 있습니다.");
+                showDialog("어딘가 빈 필드가 있습니다.");
             }
         }
     }
@@ -181,7 +178,7 @@ public class LoginControl {
                         fragmn.getCurrectActivity().switchFragment(new ProcessAuthFragment());
                     } else {
                         // 로그인 실패!
-                        showDialog("앗...", "로그인 할 수 없습니다." + response.getErrorMessage());
+                        showDialog("로그인 할 수 없습니다." + response.getErrorMessage());
                     }
                 }
             } catch(JSONException jex) {
@@ -192,12 +189,12 @@ public class LoginControl {
         @Override
         public void onFailed(int requestCode, Exception ex) {
             pm.disable();
-            showDialog("뭣...", "오류가 발생했습니다.\n" + ex.getMessage());
+            showDialog("오류가 발생했습니다.\n" + ex.getMessage());
         }
     }
 
-    private void showDialog(String title, String content) {
-        dm.setTitle(title);
+    private void showDialog(String content) {
+        dm.setTitle("알림");
         dm.setDescription(content);
         dm.show();
     }
