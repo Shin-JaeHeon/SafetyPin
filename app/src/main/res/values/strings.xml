@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SafetyPin</string>
+    <string name="app_name">SafetyPIN</string>
     <string name="app_name_safety">Safety</string>
     <string name="app_name_pin"> PIN</string>
     <string name="app_title">학교를 위한 보안 솔루션</string>
@@ -26,7 +26,7 @@
     <string name="main_menu_help">도움말</string>
 
     <!-- 메인 화면 -->
-    <string name="request_info">자녀의 선생님과 채팅이 시작됩니다\n버튼을 눌러 선생님께 요청을 보내세요</string>
+    <string name="request_info">선생님과 만나실 날짜를\n선택하세요</string>
     <string name="request_btn">방문 요청</string>
     <string name="no_pin">생성된 PIN이 없습니다</string>
 </resources>
