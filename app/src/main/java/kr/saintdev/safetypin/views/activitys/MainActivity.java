@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         OnTileClickListener listener = new OnTileClickListener();
         this.menuTileManager.addTile(R.drawable.ic_fly_blue, R.string.main_menu_send_visit_request, listener, 0);
         this.menuTileManager.addTile(R.drawable.ic_comment_blue, R.string.main_menu_send_message, listener, 1);
-        this.menuTileManager.addTile(R.drawable.ic_settings_blue, R.string.main_menu_settings, listener, 2);
+        this.menuTileManager.addTile(R.drawable.add, R.string.main_menu_settings, listener, 2);
         this.menuTileManager.addTile(R.drawable.ic_help_blue, R.string.main_menu_help, listener, 3);
     }
 
