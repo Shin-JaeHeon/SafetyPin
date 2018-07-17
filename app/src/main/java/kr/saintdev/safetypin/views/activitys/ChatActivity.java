@@ -108,6 +108,7 @@ public class ChatActivity extends AppCompatActivity {
                     arrayAdapter.addItem(myChat, new Date().getHours() + ":" + new Date().getMinutes(),
                             profileObject.getName(), 0);
                     myChat = "";
+                    text_input.setText("");
                     arrayAdapter.notifyDataSetChanged();
                 } else {
                     Toast.makeText(MainActivity.context, "채팅 전송에 실패하였습니다.", Toast.LENGTH_LONG).show();
