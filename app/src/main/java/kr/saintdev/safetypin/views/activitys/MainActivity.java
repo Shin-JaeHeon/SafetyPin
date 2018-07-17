@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         this.dm = new DialogManager(this);
 
         MeProfileObject profileObject = profileManager.getProfileObject();
-        helloMessageView.setText(String.format("안녕하세요.\n%s 학부모 님", profileObject.getName()));
+        helloMessageView.setText(String.format("안녕하세요.\n%s님", profileObject.getName()));
 
         initMenuTiles();
 
