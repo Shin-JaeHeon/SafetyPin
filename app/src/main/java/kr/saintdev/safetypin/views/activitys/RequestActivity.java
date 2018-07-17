@@ -53,7 +53,7 @@ public class RequestActivity extends AppCompatActivity {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                now = new StringBuilder(year).append("-").append(month).append("-").append(dayOfMonth).toString();
+                now = "2018-" + month + "-" + dayOfMonth;
             }
         });
 
