@@ -3,6 +3,7 @@ package kr.saintdev.safetypin.views.activitys;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -96,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
                 case 2:                 // 자녀 등록
                     intent = new Intent(getApplicationContext(), ChildActivity.class);
                     break;
-                case 3:                 // 도움말
+                case 3:
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://letscoding.kr:8888/#/how"));
                     break;
             }
 
