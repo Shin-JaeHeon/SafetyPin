@@ -21,15 +21,15 @@ public class ProgressManager {
         this.dialog.setMessage(msg);
     }
 
-    public void enable(){
+    public void enable() {
         try {
             this.dialog.show();
-        } catch(Exception ex){}
+        } catch (Exception ignored) {
+        }
     }
 
     public void disable() {
-        if(!this.dialog.isShowing()) return;
-
+        if (!this.dialog.isShowing()) return;
         this.dialog.dismiss();
     }
 }

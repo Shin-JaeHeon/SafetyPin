@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:orientation="vertical">
 
     <ListView
         android:id="@+id/chat_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="65dp" />
+        android:layout_marginBottom="65dp"
+        android:background="#ffffff"
+        android:clickable="false"
+        android:divider="#ffffff"
+        android:dividerHeight="0px"
+        android:focusable="false" />
 
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-65dp"
+        android:background="#ffffff"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/text_input"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="전송할 내용을 입력하세요"
@@ -27,8 +35,11 @@
 
         <Button
             android:id="@+id/chat_send"
+            android:background="?android:attr/selectableItemBackground"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_fly_blue" />
+            android:text="전송"
+            android:textColor="#2682FF"
+            tools:textAllCaps="false" />
     </LinearLayout>
 </LinearLayout>

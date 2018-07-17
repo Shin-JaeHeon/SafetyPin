@@ -132,8 +132,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onFailed(int requestCode, Exception ex) {
-            dm.setTitle("Exception!");
-            dm.setDescription("An error occurred.\n" + ex.getMessage());
+            dm.setTitle("연결 실패!");
+            dm.setDescription("서버 접속에 실패 하였습니다.\n네트워크 상태를 확인하세요.");
             dm.setOnYesButtonClickListener(this, "OK");
             dm.show();
         }
